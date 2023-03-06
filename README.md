@@ -1,1 +1,3 @@
 Read me file placeholder for Founders and Coders Project 3
+
+Learning journey. As I didn't know anything about javascript before this was daunting. I learned half of the module on freeCodeCamp but dind't like the hands on approach for this topic as I didn't understand anything. I read through most of the javascript module on w3schools and uses this knowledge to start to be able to get into the nested object to pull out the data to display it on the html file.
