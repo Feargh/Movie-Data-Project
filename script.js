@@ -33,13 +33,56 @@ let movieData = {
     cast: ["Ralph Fiennes", "F. Murray Abraham", "Mathieu Amalric"],
   },
 };
-let text = JSON.stringify(movieData);
-document.getElementById("demo").innerHTML = text;
+// let text = JSON.stringify(movieData);
+// document.getElementById("demo").innerHTML = text;
 
+// let y = year;
+// let p = "plot";
+// let c = cast;
+// let rt = runtime;
+// let ra = rating;
 
+document.getElementById("movieName").innerHTML = movieData["The Darjeeling Limited"];
+document.getElementById("moviePlot").innerHTML = movieData["The Darjeeling Limited"].plot;
+document.getElementById("movieCast").innerHTML = movieData["The Darjeeling Limited"].cast;
+document.getElementById("movieYear").innerHTML = movieData["The Darjeeling Limited"].year;
+document.getElementById("movieRating").innerHTML = movieData["The Darjeeling Limited"].rating;
+document.getElementById("movieRuntime").innerHTML = movieData["The Darjeeling Limited"].runtime;
 
-document.getElementById("demo2").innerHTML = movieData["The Darjeeling Limited"].cast;
 
 //   document.getElementById("demo2").innerHTML =
 // movieData.plot + "," + movieData.year + "," + movieData.cast;
-console.log(movieData["The Darjeeling Limited"].cast[0]);
+// console.log(movieData["The Darjeeling Limited"].cast[0]);
+
+
+//Controls for slideshow
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+//Thumnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt
+}
