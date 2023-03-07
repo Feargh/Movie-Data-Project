@@ -12,9 +12,50 @@
   
 <body>
     <h1>Movie Data Project</h1>
-<p id="demo"></p>
-<p id="demo2"></p>
 
+<h2>Wes Anderson Movies</h2>
+
+
+    <div class="container">
+        <div class="mySlides">
+            <img src="Darjeeling.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="Fox.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="Grand.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="Royal.jpg" style="width:100%">
+        </div>
+        <!-- Image caption -->
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+        <!-- Thumnails -->
+        <div class="column">
+            <div class="row">
+                <img class="demo cursor" src="Darjeeling.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Darjeeling Poster">
+            </div>
+            <div class="row">
+                <img class="demo cursor" src="Fox.jpg" style="width:100%" onclick="currentSlide(2)" alt="The Fox Poster">
+            </div>
+            <div class="row">
+                <img class="demo cursor" src="Grand.jpg" style="width:100%" onclick="currentSlide(3)" alt="The Grand Poster">
+            </div>
+            <div class="row">
+                <img class="demo cursor" src="Royal.jpg" style="width:100%" onclick="currentSlide(4)" alt="The Royal Poster">
+            </div>
+        </div>
+    </div>
+
+        <p class="descriptor">Movie name:<span id="movieName"></span></p>
+        <p class="descriptor">Plot:<span id="moviePlot"></span></p>
+        <p class="descriptor">Cast:<span id="movieCast"></span></p>
+        <p class="descriptor">Year Released:<span id="movieYear"></span></p>
+        <p class="descriptor">Movie rating:<span id="movieRating"></span></p>
+        <p class="descriptor">Movie runtime:<span id="movieRuntime"></span></p>
 </body>
 <footer>
     Coded by Fearghal
