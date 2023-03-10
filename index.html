@@ -17,46 +17,52 @@
 
 
     <div class="container">
-        <div class="mySlides">
-            <img src="Darjeeling.jpg" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="Fox.jpg" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="Grand.jpg" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="Royal.jpg" style="width:100%">
-        </div>
+                <div class="mySlides">
+                    <img src="Darjeeling.jpg" style="width:50%">
+                </div>
+                <div class="mySlides">
+                    <img src="Royal.jpg" style="width:50%">
+                </div>
+                <div class="mySlides">
+                    <img src="Fox.jpg" style="width:50%">
+                </div>
+                <div class="mySlides">
+                    <img src="Grand.jpg" style="width:50%">
+                </div>
+                <div class="textDetail"> 
+                    <p class="descriptor">Movie name:<span id="movieName"></span></p>
+                    <p class="descriptor">Plot:<span id="moviePlot"></span></p>
+                    <p class="descriptor">Cast:<span id="movieCast"></span></p>
+                    <p class="descriptor">Year Released:<span id="movieYear"></span></p>
+                    <p class="descriptor">Movie rating:<span id="movieRating"></span></p>
+                    <p class="descriptor">Movie runtime:<span id="movieRuntime"></span></p>
+                </div>
+                <!-- This div will be below but I would like it to be side by side -->
+    </div>
+        
         <!-- Image caption -->
         <div class="caption-container">
             <p id="caption"></p>
         </div>
+        
         <!-- Thumnails -->
         <div class="column">
             <div class="row">
                 <img class="demo cursor" src="Darjeeling.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Darjeeling Poster">
             </div>
             <div class="row">
-                <img class="demo cursor" src="Fox.jpg" style="width:100%" onclick="currentSlide(2)" alt="The Fox Poster">
+                <img class="demo cursor" src="Royal.jpg" style="width:100%" onclick="currentSlide(2)" alt="The Royal Poster">
             </div>
             <div class="row">
-                <img class="demo cursor" src="Grand.jpg" style="width:100%" onclick="currentSlide(3)" alt="The Grand Poster">
+                <img class="demo cursor" src="Fox.jpg" style="width:100%" onclick="currentSlide(3)" alt="The Fox Poster">
             </div>
             <div class="row">
-                <img class="demo cursor" src="Royal.jpg" style="width:100%" onclick="currentSlide(4)" alt="The Royal Poster">
+                <img class="demo cursor" src="Grand.jpg" style="width:100%" onclick="currentSlide(4)" alt="The Grand Poster">
             </div>
         </div>
     </div>
-
-        <p class="descriptor">Movie name:<span id="movieName"></span></p>
-        <p class="descriptor">Plot:<span id="moviePlot"></span></p>
-        <p class="descriptor">Cast:<span id="movieCast"></span></p>
-        <p class="descriptor">Year Released:<span id="movieYear"></span></p>
-        <p class="descriptor">Movie rating:<span id="movieRating"></span></p>
-        <p class="descriptor">Movie runtime:<span id="movieRuntime"></span></p>
 </body>
+
 <footer>
     Coded by Fearghal
 </footer>
