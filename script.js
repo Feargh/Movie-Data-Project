@@ -33,56 +33,79 @@ let movieData = {
     cast: ["Ralph Fiennes", "F. Murray Abraham", "Mathieu Amalric"],
   },
 };
-// let text = JSON.stringify(movieData);
-// document.getElementById("demo").innerHTML = text;
 
-// let y = year;
-// let p = "plot";
-// let c = cast;
-// let rt = runtime;
-// let ra = rating;
+console.log(Object.keys(movieData).sort()); //Can sort an array but movieData is an object so needs to be changes to an array first.
+console.log(Object.values(movieData).sort()); // Sorting the nested data from the array and logging it.
 
-document.getElementById("movieName").innerHTML = movieData["The Darjeeling Limited"];
-document.getElementById("moviePlot").innerHTML = movieData["The Darjeeling Limited"].plot;
-document.getElementById("movieCast").innerHTML = movieData["The Darjeeling Limited"].cast;
-document.getElementById("movieYear").innerHTML = movieData["The Darjeeling Limited"].year;
-document.getElementById("movieRating").innerHTML = movieData["The Darjeeling Limited"].rating;
-document.getElementById("movieRuntime").innerHTML = movieData["The Darjeeling Limited"].runtime;
+// To make an array from the first level of movieData (the titles)
+const titles = Object.keys(movieData);
+console.log(titles);
+console.log("Is titles an array? " + Array.isArray(titles));
 
+//to make an array from the nested data.
+let values = Object.values(movieData);
+console.log(values);
+console.log("IS values1 an array? " + Array.isArray(values));
+console.log(values[0].plot);
 
-//   document.getElementById("demo2").innerHTML =
-// movieData.plot + "," + movieData.year + "," + movieData.cast;
-// console.log(movieData["The Darjeeling Limited"].cast[0]);
-
-
-//Controls for slideshow
-let slideIndex = 1;
+let slideIndex = 1; //might be cool to put a random number between 1-4?
 showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-//Thumnail image controls
-function currentSlide(n) {
+function currentSlide(n) {     //Onclick linked to this currentSlide()
   showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("demo");
+  let dots = document.getElementsByClassName("demo");       //demo are thumbnails
   let captionText = document.getElementById("caption");
+
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
+
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
+  for (i = 0; i < dots.length; i++) { //dots is demo are the thumbnails
     dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt
+  document.getElementById("movieName").innerHTML = titles[slideIndex-1];
+  document.getElementById("moviePlot").innerHTML = values[slideIndex-1].plot;
+  document.getElementById("movieCast").innerHTML = values[slideIndex-1].cast;
+  document.getElementById("movieYear").innerHTML = values[slideIndex-1].year;
+  document.getElementById("movieRating").innerHTML = values[slideIndex-1].rating + "/10";
+  document.getElementById("movieRuntime").innerHTML = values[slideIndex-1].runtime + "minutes";
 }
+
+// Add this to the showslides function also but also need to make a function showText(n)??
+function showText(n) {
+  let i;
+  let text = document.getElementsByClassName("myText")
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");       //demo are thumbnails
+
+
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) { //dots is demo are the thumbnails
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  
+} 
+
+// Form listening to add the data to the object
+
+// form = document[movieInputForm];
+document[movieInputForm].addEventListener('submit', (e) => {
+  e.preventDefault();
+  const fd = new FormData(document[movieInputForm]);
+  console.log(fd);
+})
