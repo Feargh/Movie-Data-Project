@@ -13,12 +13,13 @@ span {
 }
 .container {
     position: relative;
-    padding: 0 0 100px;
+    /* padding: 0 0 100px; */
     text-align: center;
   }
 .mySlides {
     display: none;
     display: inline-block;
+    object-fit: cover;
   }
 .textDetail {
   display: inline-block;
@@ -44,6 +45,7 @@ span {
   }
 .demo {
     opacity: 0.6;
+    object-fit: cover;
   } 
 .active,
 .demo:hover {
