@@ -11,11 +11,7 @@
 </head>
   
 <body>
-    <h1>Movie Data Project</h1>
-
-<h2>Wes Anderson Movies</h2>
-
-
+    <h1>Wes Anderson Movies</h1>
     <div class="container">
                 <div class="mySlides">
                     <img src="Darjeeling.jpg" style="width:50%">
@@ -39,7 +35,6 @@
                 </div>
                 <!-- This div will be below but I would like it to be side by side -->
     </div>
-        
         <!-- Image caption -->
         <div class="caption-container">
             <p id="caption"></p>
@@ -61,6 +56,27 @@
             </div>
         </div>
     </div>
+    
+    <form name="movieInputForm" action="">
+        <!-- Maybe I can remove the <br> by styling this in CSS as block elements? -->
+        <div class="movieForm"> 
+        <label for="movie-name">Movie Name:</label><br>
+            <input type='text' name='movieName' id='Movie' placeholder="Movie name"><br>
+          <label for="plot">Plot:</label><br>
+            <input type='text' name='plot' id='plot' placeholder="Plot"><br>
+          <label for="cast">Cast:</label><br>
+            <input type='text' name='cast' id='cast' placeholder="Cast"><br>
+          <label for="year-released">Year Released:</label><br>
+            <input type='number' name='yearReleased' id='yearReleased' placeholder="Year Released"><br>
+          <label for="movie-rating">Movie Rating:</label><br>
+            <input type='rating' name='movieRating' id='movieRating' placeholder="Movie Rating"><br>
+          <label for="movie-runtime">Movie runtime:</label><br>
+            <input type='time' name='movieRuntime' id='movieRuntime'><br>
+          <label for="movie-poster">Movie Poster:</label><br>
+            <input type='file' name='moviePoster' id='moviePoster'><br><br>
+          <button type="submit" value="submit">Submit</button>
+        </div>
+    </form>
 </body>
 
 <footer>
